@@ -8,7 +8,7 @@
   //   Formspree: endpoint "https://formspree.io/f/<form id>" and accessKey ""
   var CONFIG = {
     phone: "+880 1XXX-XXXXXX",
-    whatsapp: "",
+    whatsapp: "+880 1xxx-xxxxxx",
     email: "info@bareezahsolutions.com",
     form: { endpoint: "", accessKey: "" },
     address: { bn: "ঠিকানা এখানে যুক্ত করুন, বাংলাদেশ", en: "Add your office address, Bangladesh" },

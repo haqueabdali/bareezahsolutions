@@ -1,4 +1,4 @@
-# Security and caching headers for Netlify and Cloudflare Pages (GitHub Pages ignores this file).
+# Security and caching headers for Netlify and Cloudflare Pages (GitHub Pages ignores this file). 
 /*
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.web3forms.com https://formspree.io; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
   X-Content-Type-Options: nosniff
@@ -14,3 +14,4 @@
 
 /*.js
   Cache-Control: public, max-age=86400, must-revalidate
+.......................................................................
