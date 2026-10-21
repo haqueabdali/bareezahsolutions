@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@500;600;700;800&family=Hind+Siliguri:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --green: #0f5a3f; --green-deep: #0b3d2b; --green-ink: #0e3a2a;
+  --cream: #f4e8cf; --paper: #fbf8f1; --brass: #b8862b; --brass-light: #dcaa52;
+  --ink: #13241d; --muted: #53645c; --line: #d6dfd9;
+  --f-display: "Anek Bangla", "Hind Siliguri", sans-serif;
+  --f-body: "Hind Siliguri", sans-serif;
+  --f-mono: "IBM Plex Mono", monospace;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: transparent; }
+body { font-family: var(--f-body); color: var(--ink); }
+.art { position: relative; overflow: hidden; }
+svg { display: block; }
+
+/* Wordmark */
+.wm { display: flex; flex-direction: column; line-height: 1; }
+.wm-name { font: 800 1em/0.95 var(--f-display); letter-spacing: -0.01em; }
+.wm-sub { font: 500 0.27em/1 var(--f-mono); letter-spacing: 0.52em; margin-top: 0.32em; padding-left: 0.04em; }
+.wm-bn { font: 600 0.36em/1.2 var(--f-display); margin-top: 0.34em; }
+.lockup { display: flex; align-items: center; }
+
+/* 1. Master logos */
+#logo-light, #logo-dark { width: 1800px; height: 600px; display: grid; place-items: center; }
+#logo-dark { background: var(--green-ink); }
+#logo-light .lockup, #logo-dark .lockup { gap: 64px; font-size: 168px; }
+#logo-light .wm-name { color: var(--green-ink); } #logo-light .wm-sub { color: var(--brass); } #logo-light .wm-bn { color: var(--muted); }
+#logo-dark .wm-name { color: var(--cream); } #logo-dark .wm-sub { color: var(--brass-light); } #logo-dark .wm-bn { color: #a9c3b6; }
+
+/* 2. Facebook profile: square upload, shown as a circle */
+#fb-profile { width: 2048px; height: 2048px; background: radial-gradient(circle at 50% 36%, #146b4b 0, var(--green) 38%, var(--green-ink) 100%); display: grid; place-items: center; }
+#fb-profile .inner { display: grid; justify-items: center; gap: 70px; transform: translateY(20px); }
+#fb-profile .wm { align-items: center; font-size: 210px; }
+#fb-profile .wm-name { color: var(--cream); }
+#fb-profile .wm-sub { color: var(--brass-light); margin-top: 0.4em; }
+.ring { position: absolute; inset: 120px; border-radius: 50%; border: 6px solid rgba(220, 170, 82, .35); }
+
+/* 3. Facebook cover: 1640 × 624 (safe area keeps text clear of the profile picture and mobile crop) */
+#fb-cover { width: 1640px; height: 624px; background: var(--green-ink); color: var(--cream); }
+#fb-cover .ledger { position: absolute; inset: 0 0 0 auto; width: 720px;
+  background: repeating-linear-gradient(to bottom, transparent 0 51px, rgba(220, 170, 82, .16) 51px 52px); border-left: 3px solid rgba(220, 170, 82, .5); }
+#fb-cover .ledger::before { content: ""; position: absolute; top: 0; bottom: 0; left: 64px; width: 1px; background: rgba(220, 170, 82, .28); }
+#fb-cover .content { position: absolute; left: 200px; right: 760px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+#fb-cover .eyebrow { font: 500 22px var(--f-mono); letter-spacing: .14em; color: var(--brass-light); text-transform: uppercase; }
+#fb-cover h1 { margin: 0; font: 800 66px/1.12 var(--f-display); }
+#fb-cover .tag { font: 500 27px/1.4 var(--f-body); color: #c4d6cc; }
+#fb-cover .brandside { display: flex; align-items: center; gap: 18px; }
+#fb-cover .brandside .bn { font: 600 24px "Anek Bangla", sans-serif; color: #c4d6cc; letter-spacing: 0; text-transform: none; }
+#fb-cover .list { position: absolute; right: 200px; width: 430px; top: 64px; display: grid; gap: 0; }
+#fb-cover .list div { height: 52px; display: flex; align-items: center; gap: 18px; font: 500 26px var(--f-body); color: var(--cream); }
+#fb-cover .list b { width: 9px; height: 9px; border-radius: 50%; background: var(--brass-light); flex: none; }
+#fb-cover .list .more { color: var(--brass-light); }
+#fb-cover .web { position: absolute; left: 200px; bottom: 54px; font: 500 22px var(--f-mono); letter-spacing: .06em; color: #a9c3b6; }
+
+/* 4. Instagram profile: 1080 × 1080, cream ground, circle crop */
+#ig-profile { width: 1080px; height: 1080px; background: var(--paper); display: grid; place-items: center; }
+#ig-profile .inner { display: grid; justify-items: center; gap: 40px; transform: translateY(10px); }
+#ig-profile .wm { align-items: center; font-size: 104px; }
+#ig-profile .wm-name { color: var(--green-ink); }
+#ig-profile .wm-sub { color: var(--brass); margin-top: 0.42em; }
+#ig-profile .ring { inset: 64px; border: 4px solid rgba(15, 90, 63, .14); }
+#ig-profile .ring2 { position: absolute; inset: 84px; border-radius: 50%; border: 2px dashed rgba(184, 134, 43, .45); }
+
+/* 5. Letterhead preview container is a separate page (letterhead.html) */
+</style>
+</head>
+<body>
+
+<template id="mark-tpl">
+  <!-- Mark: a B drawn as two ledger bowls on a rounded seal, with a brass approval dot -->
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" rx="24" fill="FIELD"/>
+    <path d="M33 23V77M33 23H53.5a13.5 13.5 0 0 1 0 27H33M33 50H57.5a13.5 13.5 0 0 1 0 27H33" fill="none" stroke="INK" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="80" cy="23" r="6" fill="DOT"/>
+  </svg>
+</template>
+
+<div id="logo-light" class="art"><div class="lockup"><span class="mark" data-size="400" data-field="#0f5a3f" data-ink="#f4e8cf" data-dot="#dcaa52"></span>
+  <div class="wm"><span class="wm-name">Bareezah</span><span class="wm-sub">SOLUTIONS</span><span class="wm-bn">বারিজাহ সলিউশনস</span></div></div></div>
+
+<div id="logo-dark" class="art"><div class="lockup"><span class="mark" data-size="400" data-field="#f4e8cf" data-ink="#0e3a2a" data-dot="#b8862b"></span>
+  <div class="wm"><span class="wm-name">Bareezah</span><span class="wm-sub">SOLUTIONS</span><span class="wm-bn">বারিজাহ সলিউশনস</span></div></div></div>
+
+<div id="mark-only" class="art" style="width:1024px;height:1024px"><span class="mark" data-size="1024" data-field="#0f5a3f" data-ink="#f4e8cf" data-dot="#dcaa52"></span></div>
+
+<div id="fb-profile" class="art"><div class="ring"></div>
+  <div class="inner"><span class="mark" data-size="720" data-field="#f4e8cf" data-ink="#0e3a2a" data-dot="#b8862b"></span>
+  <div class="wm"><span class="wm-name">Bareezah</span><span class="wm-sub">SOLUTIONS</span></div></div></div>
+
+<div id="fb-cover" class="art">
+  <div class="content">
+    <div class="brandside"><span class="mark" data-size="64" data-field="#f4e8cf" data-ink="#0e3a2a" data-dot="#b8862b"></span><span class="eyebrow">Bareezah Solutions</span><span class="bn">· বারিজাহ সলিউশনস</span></div>
+    <h1>হিসাবের খাতা থেকে<br>বাণিজ্যের চালান, এক প্রতিষ্ঠানে।</h1>
+    <span class="tag">Accounting · VAT &amp; Tax · Compliance · Training · Trade · Technology</span>
+  </div>
+  <div class="ledger"></div>
+  <div class="web">bareezahsolutions.com</div>
+  <div class="list">
+    <div><b></b>হিসাবরক্ষণ ও বুককিপিং</div>
+    <div><b></b>ভ্যাট ও ট্যাক্স পরামর্শ</div>
+    <div><b></b>ডকুমেন্টেশন ও কমপ্লায়েন্স</div>
+    <div><b></b>কর্পোরেট প্রশিক্ষণ</div>
+    <div><b></b>আমদানি ও রপ্তানি</div>
+    <div><b></b>গার্মেন্টস এক্সেসরিজ</div>
+    <div><b></b>সফটওয়্যার ও প্রযুক্তি</div>
+    <div><b></b>ট্রেডিং ও ডিস্ট্রিবিউশন</div>
+    <div class="more"><b></b>আরও ৫টি সেবা খাত</div>
+  </div>
+  
+</div>
+
+<div id="ig-profile" class="art"><div class="ring"></div><div class="ring2"></div>
+  <div class="inner"><span class="mark" data-size="420" data-field="#0f5a3f" data-ink="#f4e8cf" data-dot="#dcaa52"></span>
+  <div class="wm"><span class="wm-name">Bareezah</span><span class="wm-sub">SOLUTIONS</span></div></div></div>
+
+<script>
+  var tpl = document.getElementById("mark-tpl").innerHTML;
+  document.querySelectorAll(".mark").forEach(function (m) {
+    var s = m.dataset.size;
+    m.innerHTML = tpl.replace("FIELD", m.dataset.field).replace("INK", m.dataset.ink).replace("DOT", m.dataset.dot);
+    var svg = m.querySelector("svg"); svg.setAttribute("width", s); svg.setAttribute("height", s);
+  });
+</script>
+</body>
+</html>

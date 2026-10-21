@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@600;700;800&family=Hind+Siliguri:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+@page { size: A4; margin: 0; }
+:root {
+  --green: #0f5a3f; --green-ink: #0e3a2a; --cream: #f4e8cf; --brass: #b8862b;
+  --ink: #13241d; --muted: #4f6158; --line: #cfd9d3;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font-family: "Hind Siliguri", sans-serif; color: var(--ink); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 210mm; height: 297mm; position: relative; overflow: hidden; background: #ffffff; }
+
+.head { position: absolute; left: 18mm; right: 18mm; top: 14mm; height: 30mm; display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 5mm; }
+.brand svg { width: 21mm; height: 21mm; }
+.wm { display: flex; flex-direction: column; }
+.wm-name { font: 800 27pt/0.95 "Anek Bangla", sans-serif; color: var(--green-ink); letter-spacing: -0.01em; }
+.wm-sub { font: 500 7.6pt/1 "IBM Plex Mono", monospace; letter-spacing: .52em; color: var(--brass); margin-top: 2.2mm; }
+.head-right { text-align: right; display: grid; gap: 1.2mm; }
+.bn-name { font: 700 15pt/1.1 "Anek Bangla", sans-serif; color: var(--green-ink); }
+.lines { font: 400 8pt/1.45 "Hind Siliguri", sans-serif; color: var(--muted); }
+.rule { position: absolute; left: 18mm; right: 18mm; top: 46mm; height: 0.9mm; background: var(--green); }
+.rule::after { content: ""; position: absolute; left: 0; right: 0; top: 1.6mm; height: 0.3mm; background: var(--brass); }
+
+.refs { position: absolute; left: 18mm; right: 18mm; top: 53mm; display: flex; justify-content: space-between; font: 500 9.5pt "Hind Siliguri", sans-serif; color: var(--muted); }
+.refs span { display: inline-flex; align-items: baseline; gap: 2mm; }
+.refs i { display: inline-block; width: 46mm; border-bottom: 0.25mm dotted #9aa9a1; transform: translateY(-1mm); }
+
+.watermark { position: absolute; left: 50%; top: 52%; width: 96mm; height: 96mm; transform: translate(-50%, -50%); opacity: .028; }
+
+.foot { position: absolute; left: 0; right: 0; bottom: 0; }
+.foot-rule { margin: 0 18mm; height: 0.3mm; background: var(--brass); }
+.foot-cols { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 6mm; padding: 4mm 18mm 5mm; font: 400 8pt/1.5 "Hind Siliguri", sans-serif; color: var(--muted); }
+.foot-cols b { display: block; font: 500 6.6pt "IBM Plex Mono", monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--green); margin-bottom: .6mm; }
+.foot-band { height: 7mm; background: var(--green-ink); display: flex; align-items: center; justify-content: space-between; padding: 0 18mm; font: 500 7pt "IBM Plex Mono", monospace; letter-spacing: .1em; color: #c4d6cc; }
+.foot-band span:last-child { color: #dcaa52; }
+.bn { font-family: "Hind Siliguri", sans-serif; letter-spacing: 0; text-transform: none; font-weight: 600; }
+.foot-band .bn { font-size: 8pt; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="page" id="page">
+  <div class="head" id="lh-head">
+    <div class="brand">
+      <svg viewBox="0 0 100 100"><rect width="100" height="100" rx="24" fill="#0f5a3f"/><path d="M33 23V77M33 23H53.5a13.5 13.5 0 0 1 0 27H33M33 50H57.5a13.5 13.5 0 0 1 0 27H33" fill="none" stroke="#f4e8cf" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="80" cy="23" r="6" fill="#dcaa52"/></svg>
+      <div class="wm"><span class="wm-name">Bareezah</span><span class="wm-sub">SOLUTIONS</span></div>
+    </div>
+    <div class="head-right">
+      <span class="bn-name">বারিজাহ সলিউশনস</span>
+      <span class="lines">হিসাবরক্ষণ · ভ্যাট ও ট্যাক্স · কমপ্লায়েন্স · প্রশিক্ষণ<br>আমদানি-রপ্তানি · ঠিকাদারি · ট্রেডিং · প্রযুক্তি সেবা</span>
+    </div>
+  </div>
+  <div class="rule"></div>
+  <div class="refs">
+    <span>স্মারক নং / Ref: <i></i></span>
+    <span>তারিখ / Date: <i></i></span>
+  </div>
+
+  <svg class="watermark" viewBox="0 0 100 100"><rect width="100" height="100" rx="24" fill="#0f5a3f"/><path d="M33 23V77M33 23H53.5a13.5 13.5 0 0 1 0 27H33M33 50H57.5a13.5 13.5 0 0 1 0 27H33" fill="none" stroke="#ffffff" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+  <div class="foot" id="lh-foot">
+    <div class="foot-rule"></div>
+    <div class="foot-cols">
+      <div><b><span class="bn">ঠিকানা</span> · Address</b>ADDRESS_LINE</div>
+      <div><b><span class="bn">ফোন</span> · Phone</b>PHONE_LINE</div>
+      <div><b><span class="bn">ইমেইল</span> · Email &amp; Web</b>EMAIL_LINE<br>bareezahsolutions.com</div>
+    </div>
+    <div class="foot-band"><span>BAREEZAH SOLUTIONS</span><span class="bn">বাংলাদেশের প্রচলিত আইন অনুযায়ী পরিচালিত</span></div>
+  </div>
+</div>
+</body>
+</html>
